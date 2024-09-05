@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Mesaj</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 50px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+        #story, #finalMessage {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Merhaba, Bu mesaj sana özel!</h1>
+    <p>Hayat bazen beklenmedik sorular sorar, peki sen hazır mısın?</p>
+
+    <div class="question">
+        <h3>Soru 1: Soru 1 "Hayalindeki bir dünyada, hayatını değiştirecek bir fırsatla karşılaştığında, o fırsatı değerlendirmek için ne kadar cesur olurdun?"...</h3>
+        <input type="text" id="answer1">
+    </div>
+    <div class="question">
+        <h3>Soru 2: Soru 2 "Bir rüyayı gerçeğe dönüştürmek için tek gereken şey bir adım atmak olsaydı, o adımı atmaya değer mi?"...</h3>
+        <input type="text" id="answer2">
+    </div>
+    <div class="question">
+        <h3>Soru 3: Soru 3 "Eğer küçük bir ihtimal, seni en büyük mutluluğuna ulaştıracaksa, o küçük ihtimali takip eder miydin?"
+
+            ...</h3>
+        <input type="text" id="answer3">
+    </div>
+    <div class="question">
+        <h3>Soru 4: "İhtimallerin belirsizliğine rağmen, eğer bir yolculuğa çıkacak olsan, bu yolculuğun sonunda seni bekleyen sürprizlere hazır olur muydun?"
+
+            ...</h3>
+        <input type="text" id="answer4">
+    </div>
+    <div class="question">
+        <h3>Soru 5: "Bir hayat boyu sürecek bir mutluluk, sadece bir anlık cesaret gerektiriyorsa, bu cesareti gösterir miydin?"
+
+            ...</h3>
+        <input type="text" id="answer5">
+    </div>
+
+    <button onclick="showStory()">Cevapları Gönder</button>
+
+    <div id="story" class="hidden">
+        <h2>Kısa Hikaye:</h2>
+        <p>Bir zamanlar, bir mucizenin peşinden gitmeye karar veren bir çift vardı...</p>
+        <p>İhtimaller, bir mucizenin başlangıcı ya da sonu olabilir. Sana, o mucizenin ne kadar gerçek olduğunu kanıtlayacağıma söz veriyorum. Var mısın bu yolculuğa?</p>
+        <button onclick="showFinalMessage()">Evet</button>
+        <button onclick="showDeclineMessage()">Hayır</button>
+    </div>
+
+    <div id="finalMessage" class="hidden">
+        <h3>Teşekkürler!</h3>
+        <p>Sana güvendiğin için çok mutluyum. Bunu sana kanıtlamak için ne olursa olsun yapacağım. Beraber, hayatımızın en güzel yolculuğuna adım attık!</p>
+    </div>
+
+    <div id="declineMessage" class="hidden">
+        <h3>Belki başka bir zaman...</h3>
+        <p>Her ne olursa olsun, seninle bu yolculuğa çıkmak için sabırsızlanıyorum.</p>
+    </div>
+
+    <script>
+        function showStory() {
+            document.getElementById('story').classList.remove('hidden');
+        }
+
+        function showFinalMessage() {
+            document.getElementById('finalMessage').classList.remove('hidden');
+            document.getElementById('story').classList.add('hidden');
+        }
+
+        function showDeclineMessage() {
+            document.getElementById('declineMessage').classList.remove('hidden');
+            document.getElementById('story').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
